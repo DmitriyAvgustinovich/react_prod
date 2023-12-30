@@ -29,6 +29,7 @@ module.exports = {
     "object-curly-newline": "off",
     "import/no-extraneous-dependencies": "off",
     "no-underscore-dangle": "off",
+    "max-len": "off",
     quotes: ["error", "double"],
     "i18next/no-literal-string": ["warn", { markupOnly: true }],
     "react/jsx-indent": [2, 2],
