@@ -1,10 +1,10 @@
 import "./styles/index.scss";
 import { classNames } from "shared/lib/classNames/classNames";
-import { useTheme } from "./providers/ThemeProvider";
-import { AppRouter } from "./providers/router";
 import { Navbar } from "widgets/Navbar";
 import { Sidebar } from "widgets/Sidebar";
 import { Suspense } from "react";
+import { useTheme } from "./providers/ThemeProvider";
+import { AppRouter } from "./providers/router";
 
 export const App = () => {
   const { theme } = useTheme();
