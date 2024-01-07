@@ -5,13 +5,16 @@ import {
   ThemeContext,
 } from "../lib/ThemeContext";
 
-const defaultTheme = (localStorage.getItem(LOCAL_STORAGE_THEME_KEY) as Theme) || Theme.LIGHT;
+// eslint-disable-next-line operator-linebreak
+const defaultTheme =
+  (localStorage.getItem(LOCAL_STORAGE_THEME_KEY) as Theme) || Theme.LIGHT;
 
 interface ThemeProviderProps {
   initialTheme?: Theme;
 }
 
-export const ThemeProvider: React.FC<ThemeProviderProps> = ({ children, initialTheme }) => {
+export const ThemeProvider: React.FC<ThemeProviderProps> = (props) => {
+  const { children, initialTheme } = props;
   const [theme, setTheme] = React.useState<Theme>(initialTheme || defaultTheme);
 
   const defaultProps = React.useMemo(

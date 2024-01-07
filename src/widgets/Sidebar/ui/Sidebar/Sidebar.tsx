@@ -14,7 +14,9 @@ interface SidebarProps {
   className?: string;
 }
 
-export const Sidebar = ({ className }: SidebarProps) => {
+export const Sidebar = (props: SidebarProps) => {
+  const { className } = props;
+
   const [collapsed, setCollapsed] = React.useState(false);
   const { t } = useTranslation();
 

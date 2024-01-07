@@ -7,7 +7,8 @@ interface LangSwitcherProps {
   short?: boolean;
 }
 
-export const LangSwitcher = ({ className, short }: LangSwitcherProps) => {
+export const LangSwitcher = (props: LangSwitcherProps) => {
+  const { className, short } = props;
   const { t, i18n } = useTranslation();
 
   const toggle = () => {
