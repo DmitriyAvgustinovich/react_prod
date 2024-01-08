@@ -1,4 +1,4 @@
-import React, { ErrorInfo, Suspense } from "react";
+import React from "react";
 import { PageError } from "widgets/PageError/ui/PageError";
 
 interface ErrorBoundaryProps {
@@ -22,7 +22,7 @@ class ErrorBoundary extends React.Component<
     return { hasError: true };
   }
 
-  componentDidCatch(error: Error, errorInfo: ErrorInfo) {
+  componentDidCatch(error: Error, errorInfo: React.ErrorInfo) {
     console.log(error, errorInfo);
   }
 
@@ -32,9 +32,9 @@ class ErrorBoundary extends React.Component<
 
     if (hasError) {
       return (
-        <Suspense fallback="">
+        <React.Suspense fallback="">
           <PageError />
-        </Suspense>
+        </React.Suspense>
       );
     }
 
