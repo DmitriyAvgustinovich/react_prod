@@ -34,6 +34,8 @@ module.exports = {
     "react-hooks/rules-of-hooks": "error",
     "react-hooks/exhaustive-deps": "error",
     "no-param-reassign": "off",
+    "react/jsx-no-useless-fragment": "off",
+    "operator-linebreak": "off",
     "max-len": "off",
     quotes: ["error", "double"],
     "i18next/no-literal-string": [
