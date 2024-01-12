@@ -36,6 +36,7 @@ module.exports = {
     "no-param-reassign": "off",
     "react/jsx-no-useless-fragment": "off",
     "operator-linebreak": "off",
+    "lines-between-class-members": "off",
     "max-len": "off",
     quotes: ["error", "double"],
     "i18next/no-literal-string": [
