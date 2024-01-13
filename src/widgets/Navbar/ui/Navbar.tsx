@@ -11,7 +11,7 @@ interface NavbarProps {
   className?: string;
 }
 
-export const Navbar = (props: NavbarProps) => {
+export const Navbar = React.memo((props: NavbarProps) => {
   const { className } = props;
 
   const dispatch = useDispatch();
@@ -61,4 +61,4 @@ export const Navbar = (props: NavbarProps) => {
       )}
     </div>
   );
-};
+});

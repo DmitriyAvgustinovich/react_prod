@@ -37,6 +37,7 @@ module.exports = {
     "react/jsx-no-useless-fragment": "off",
     "operator-linebreak": "off",
     "lines-between-class-members": "off",
+    "implicit-arrow-linebreak": "off",
     "max-len": "off",
     quotes: ["error", "double"],
     "i18next/no-literal-string": [
@@ -56,6 +57,7 @@ module.exports = {
   },
   globals: {
     __IS_DEV__: true,
+    __API__: true,
   },
   overrides: [
     {

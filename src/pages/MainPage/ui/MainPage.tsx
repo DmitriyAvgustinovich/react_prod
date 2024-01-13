@@ -7,7 +7,7 @@ export const MainPage = () => {
   return (
     <div>
       <BugButton />
-      {t("Главная страница")}
+      {t("Главная")}
     </div>
   );
 };
