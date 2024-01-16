@@ -20,6 +20,10 @@ export const Sidebar = React.memo((props: SidebarProps) => {
     setCollapsed((prev) => !prev);
   };
 
+  const itemsList = SidebarItemsList.map((item) => (
+    <SidebarItem key={item.path} item={item} collapsed={collapsed} />
+  ));
+
   return (
     <div
       data-testid="sidebar"
@@ -38,11 +42,7 @@ export const Sidebar = React.memo((props: SidebarProps) => {
         {collapsed ? ">" : "<"}
       </Button>
 
-      <div className={cls.items}>
-        {SidebarItemsList.map((item) => (
-          <SidebarItem key={item.path} item={item} collapsed={collapsed} />
-        ))}
-      </div>
+      <div className={cls.items}>{itemsList}</div>
 
       <div className={cls.switchers}>
         <ThemeSwitcher />
