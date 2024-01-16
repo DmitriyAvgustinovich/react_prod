@@ -38,6 +38,7 @@ module.exports = {
     "operator-linebreak": "off",
     "lines-between-class-members": "off",
     "implicit-arrow-linebreak": "off",
+    "no-undef": "off",
     "max-len": "off",
     quotes: ["error", "double"],
     "i18next/no-literal-string": [

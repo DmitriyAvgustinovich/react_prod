@@ -32,7 +32,7 @@ export const useTheme = (): useThemeResult => {
   };
 
   return {
-    theme,
+    theme: theme || Theme.LIGHT,
     toggleTheme,
   };
 };
