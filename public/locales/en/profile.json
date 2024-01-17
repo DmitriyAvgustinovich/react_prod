@@ -1,4 +1,5 @@
 {
+  "Профиль": "Profile",
   "Редактировать": "Edit",
   "Отменить": "Cancel",
   "Сохранить": "Save",
@@ -11,5 +12,10 @@
   "Укажите валюту": "Enter currency",
   "Укажите страну": "Enter country",
   "Произошла ошибка при загрузке профиля": "An error occurred while loading the profile",
-  "Попробуйте обновить страницу": "Try to refresh the page"
+  "Попробуйте обновить страницу": "Try to refresh the page",
+  "Серверная ошибка при сохранении профиля": "Server error while saving the profile",
+  "Данные не указаны": "Data is not specified",
+  "Имя и фамилия обязательны": "Name and surname are required",
+  "Некорректный возраст": "Incorrect age",
+  "Некорректный регион": "Incorrect region"
 }

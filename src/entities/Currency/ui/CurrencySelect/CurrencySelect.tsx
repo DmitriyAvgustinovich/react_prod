@@ -32,7 +32,7 @@ export const CurrencySelect = React.memo((props: CurrencySelectProps) => {
   return (
     <Select
       className={classNames("", {}, [className])}
-      label={t("Укажите Валюту")}
+      label={t("Укажите валюту")}
       options={options}
       value={value}
       onChange={onChangeHandler}

@@ -7,6 +7,8 @@ import {
   profileActions,
   getProfileReadonly,
   getProfileForm,
+  getProfileValidateErrors,
+  ValidateProfileErrors,
 } from "entities/Profile";
 import React from "react";
 import { classNames } from "shared/lib/classNames/classNames";
@@ -18,6 +20,8 @@ import { useAppDispatch } from "shared/lib/hooks/useAppDispatch/useAppDispatch";
 import { useSelector } from "react-redux";
 import { Currency } from "entities/Currency";
 import { Country } from "entities/Country";
+import { Text, TextTheme } from "shared/ui/Text/Text";
+import { useTranslation } from "react-i18next";
 import { ProfilePageHeader } from "./ProfilePageHeader/ProfilePageHeader";
 
 const reducers: ReducersList = {
@@ -31,15 +35,26 @@ interface ProfilePageProps {
 const ProfilePage = (props: ProfilePageProps) => {
   const { className } = props;
 
+  const { t } = useTranslation("profile");
+
   const dispatch = useAppDispatch();
 
   const formData = useSelector(getProfileForm);
   const isLoading = useSelector(getProfileIsLoading);
   const error = useSelector(getProfileError);
   const readonly = useSelector(getProfileReadonly);
+  const validateErrors = useSelector(getProfileValidateErrors);
+
+  const validateErrorTranslates = {
+    [ValidateProfileErrors.SERVER_ERROR]: t("Серверная ошибка при сохранении"),
+    [ValidateProfileErrors.NO_DATA]: t("Данные не указаны"),
+    [ValidateProfileErrors.INCORRECT_USER_DATA]: t("Имя и фамилия обязательны"),
+    [ValidateProfileErrors.INCORRECT_AGE]: t("Некорректный возраст"),
+    [ValidateProfileErrors.INCORRECT_COUNTRY]: t("Некорректный регион"),
+  };
 
   React.useEffect(() => {
-    dispatch(fetchProfileData());
+    if (__PROJECT__ !== "storybook") dispatch(fetchProfileData());
   }, [dispatch]);
 
   const onChangeFirstname = React.useCallback(
@@ -102,6 +117,16 @@ const ProfilePage = (props: ProfilePageProps) => {
     <DynamicModuleLoader reducers={reducers} removeAfterUnmount>
       <div className={classNames("", {}, [className])}>
         <ProfilePageHeader />
+
+        {validateErrors?.length &&
+          validateErrors.map((error) => (
+            <Text
+              key={error}
+              theme={TextTheme.ERROR}
+              text={validateErrorTranslates[error]}
+            />
+          ))}
+
         <ProfileCard
           data={formData}
           isLoading={isLoading}
