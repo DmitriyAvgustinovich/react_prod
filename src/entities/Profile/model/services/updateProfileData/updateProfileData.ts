@@ -17,7 +17,11 @@ export const updateProfileData = createAsyncThunk<
   if (errors.length) return rejectWithValue(errors);
 
   try {
-    const res = await extra.api.put<Profile>("/profile", formData);
+    const res = await extra.api.put<Profile>(
+      `/profile/${formData?.id}`,
+      formData
+    );
+
     if (!res.data) throw new Error();
 
     return res.data;

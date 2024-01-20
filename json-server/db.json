@@ -19,7 +19,9 @@
       "img": "https://teknotower.com/wp-content/uploads/2020/11/js.png",
       "views": 1022,
       "createdAt": "26.02.2022",
-      "type": ["IT"],
+      "type": [
+        "IT"
+      ],
       "blocks": [
         {
           "id": "1",
@@ -100,6 +102,42 @@
       "text": "some comment 3",
       "articleId": "1",
       "userId": "1"
+    },
+    {
+      "articleId": "1",
+      "userId": "1",
+      "text": "123",
+      "id": "205hWKW"
+    },
+    {
+      "articleId": "1",
+      "userId": "1",
+      "text": "12",
+      "id": "2iDoGBH"
+    },
+    {
+      "articleId": "1",
+      "userId": "1",
+      "text": "1233212133213",
+      "id": "iY_u2NJ"
+    },
+    {
+      "articleId": "1",
+      "userId": "1",
+      "text": "re",
+      "id": "G5eHlo0"
+    },
+    {
+      "articleId": "1",
+      "userId": "1",
+      "text": "123323211232",
+      "id": "FEQ3oML"
+    },
+    {
+      "articleId": "1",
+      "userId": "1",
+      "text": "fadsfdsa1231232123111111",
+      "id": "AQhBYQK"
     }
   ],
   "users": [
@@ -118,14 +156,28 @@
       "avatar": "https://xakep.ru/wp-content/uploads/2018/05/171485/KuroiSH-hacker.jpg"
     }
   ],
-  "profile": {
-    "first": "jgh",
-    "lastname": "asf",
-    "age": 465,
-    "currency": "RUB",
-    "country": "Belarus",
-    "city": "Moscow",
-    "username": "admin213",
-    "avatar": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Unofficial_JavaScript_logo_2.svg/1200px-Unofficial_JavaScript_logo_2.svg.png"
-  }
+  "profile": [
+    {
+      "id": "1",
+      "first": "jgh123123",
+      "lastname": "asf",
+      "age": 123312,
+      "currency": "RUB",
+      "country": "Belarus",
+      "city": "Moscow",
+      "username": "admin213",
+      "avatar": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Unofficial_JavaScript_logo_2.svg/1200px-Unofficial_JavaScript_logo_2.svg.png"
+    },
+    {
+      "id": "2",
+      "first": "jgh",
+      "lastname": "asf",
+      "age": 465,
+      "currency": "RUB",
+      "country": "uk",
+      "city": "surik",
+      "username": "dimas",
+      "avatar": "https://xakep.ru/wp-content/uploads/2018/05/171485/KuroiSH-hacker.jpg"
+    }
+  ]
 }
