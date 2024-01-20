@@ -11,5 +11,7 @@
   "Введите username": "Enter username",
   "Введите пароль": "Enter password",
   "Форма авторизации": "Authorization form",
-  "Вы ввели неверный логин или пароль": "You entered an invalid login or password"
+  "Вы ввели неверный логин или пароль": "You entered an invalid login or password",
+  "Комментарии": "Comments",
+  "Комментарии отсутствуют": "Comments are absent"
 }

@@ -13,6 +13,7 @@ import { Avatar } from "shared/ui/Avatar/Avatar";
 import EyeIcon from "shared/assets/icons/eye.svg";
 import { Icon } from "shared/ui/Icon/Icon";
 import CalendarIcon from "shared/assets/icons/calendar.svg";
+import { useInitialEffect } from "shared/lib/hooks/useInitialEffect/useInitialEffect";
 import { ArticleBlock, ArticleBlockType } from "../../model/types/article";
 import { articleDetailsReducer } from "../../model/slice/ArticleDetailsSlice";
 import cls from "./ArticleDetails.module.scss";
@@ -76,9 +77,9 @@ export const ArticleDetails = React.memo((props: ArticleDetailsProps) => {
     }
   }, []);
 
-  React.useEffect(() => {
-    if (__PROJECT__ !== "storybook") dispatch(fetchArticleById(id));
-  }, [dispatch, id]);
+  useInitialEffect(() => {
+    dispatch(fetchArticleById(id));
+  });
 
   let content;
   if (isLoading) {
