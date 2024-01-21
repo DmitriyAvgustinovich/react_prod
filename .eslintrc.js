@@ -38,6 +38,7 @@ module.exports = {
     "operator-linebreak": "off",
     "lines-between-class-members": "off",
     "implicit-arrow-linebreak": "off",
+    "react/no-array-index-key": "off",
     "no-undef": "off",
     "max-len": "off",
     quotes: ["error", "double"],

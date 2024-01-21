@@ -2,7 +2,7 @@ import { classNames } from "shared/lib/classNames/classNames";
 import React from "react";
 import { useTranslation } from "react-i18next";
 import { ArticleDetails } from "entities/Article";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import { CommentList } from "entities/Comment";
 import { Text } from "shared/ui/Text/Text";
 import {
@@ -13,6 +13,8 @@ import { useSelector } from "react-redux";
 import { useInitialEffect } from "shared/lib/hooks/useInitialEffect/useInitialEffect";
 import { useAppDispatch } from "shared/lib/hooks/useAppDispatch/useAppDispatch";
 import { AddCommentForm } from "features/addCommentForm";
+import { Button, ButtonTheme } from "shared/ui/Button/Button";
+import { RouterPath } from "shared/config/routeConfig/routeConfig";
 import cls from "./ArticleDetailsPage.module.scss";
 import {
   articleDetailsCommentReducer,
@@ -35,6 +37,7 @@ const ArticleDetailsPage = (props: ArticleDetailsPageProps) => {
 
   const { t } = useTranslation("article-details");
 
+  const navigate = useNavigate();
   const { id } = useParams<{ id: string }>();
 
   const dispatch = useAppDispatch();
@@ -52,6 +55,10 @@ const ArticleDetailsPage = (props: ArticleDetailsPageProps) => {
     dispatch(fetchCommentsByArticleId(id));
   });
 
+  const onBackToList = React.useCallback(() => {
+    navigate(RouterPath.articles);
+  }, [navigate]);
+
   if (!id) {
     return (
       <div className={classNames(cls.ArticleDetailsPage, {}, [className])}>
@@ -63,6 +70,10 @@ const ArticleDetailsPage = (props: ArticleDetailsPageProps) => {
   return (
     <DynamicModuleLoader reducers={reducers} removeAfterUnmount>
       <div className={classNames(cls.ArticleDetailsPage, {}, [className])}>
+        <Button theme={ButtonTheme.OUTLINE} onClick={onBackToList}>
+          {t("Назад к списку")}
+        </Button>
+
         <ArticleDetails id={id} />
         <Text className={cls.commentTitle} text={t("Комментарии")} />
 

@@ -19,6 +19,7 @@
       "img": "https://teknotower.com/wp-content/uploads/2020/11/js.png",
       "views": 1022,
       "createdAt": "26.02.2022",
+      "userId": "1",
       "type": [
         "IT"
       ],
@@ -107,37 +108,49 @@
       "articleId": "1",
       "userId": "1",
       "text": "123",
-      "id": "205hWKW"
+      "id": "4Cljjzl"
     },
     {
       "articleId": "1",
       "userId": "1",
-      "text": "12",
-      "id": "2iDoGBH"
+      "text": "123asfasf",
+      "id": "AEM4Dvc"
     },
     {
       "articleId": "1",
-      "userId": "1",
-      "text": "1233212133213",
-      "id": "iY_u2NJ"
+      "userId": "2",
+      "text": "123asfasf",
+      "id": "IFEOWl0"
     },
     {
       "articleId": "1",
-      "userId": "1",
-      "text": "re",
-      "id": "G5eHlo0"
+      "userId": "2",
+      "text": "привет мир",
+      "id": "dBacYRZ"
     },
     {
       "articleId": "1",
-      "userId": "1",
-      "text": "123323211232",
-      "id": "FEQ3oML"
+      "userId": "2",
+      "text": "хехехехе",
+      "id": "rBX_C-e"
     },
     {
       "articleId": "1",
-      "userId": "1",
-      "text": "fadsfdsa1231232123111111",
-      "id": "AQhBYQK"
+      "userId": "2",
+      "text": "фыафыа",
+      "id": "5k0ApX-"
+    },
+    {
+      "articleId": "1",
+      "userId": "2",
+      "text": "sdfsdfsd",
+      "id": "w-HDIRq"
+    },
+    {
+      "articleId": "1",
+      "userId": "2",
+      "text": "asdasdasd",
+      "id": "MVvGQoZ"
     }
   ],
   "users": [
@@ -146,7 +159,7 @@
       "username": "admin",
       "password": "123",
       "role": "ADMIN",
-      "avatar": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Unofficial_JavaScript_logo_2.svg/1200px-Unofficial_JavaScript_logo_2.svg.png"
+      "avatar": "https://avatars.mds.yandex.net/get-zen_doc/3413519/pub_5ff887b2fe4e686f6ae6ba3f_5ff887d7f906b16872a69755/scale_1200"
     },
     {
       "id": "2",
@@ -159,24 +172,24 @@
   "profile": [
     {
       "id": "1",
-      "first": "jgh123123",
-      "lastname": "asf",
-      "age": 123312,
-      "currency": "RUB",
-      "country": "Belarus",
-      "city": "Moscow",
-      "username": "admin213",
-      "avatar": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Unofficial_JavaScript_logo_2.svg/1200px-Unofficial_JavaScript_logo_2.svg.png"
-    },
-    {
-      "id": "2",
       "first": "jgh",
       "lastname": "asf",
       "age": 465,
       "currency": "RUB",
-      "country": "uk",
-      "city": "surik",
-      "username": "dimas",
+      "country": "Belarus",
+      "city": "Moscow",
+      "username": "admin213",
+      "avatar": "https://avatars.mds.yandex.net/get-zen_doc/3413519/pub_5ff887b2fe4e686f6ae6ba3f_5ff887d7f906b16872a69755/scale_1200"
+    },
+    {
+      "id": "2",
+      "first": "ulbi tv",
+      "lastname": "asf",
+      "age": 465,
+      "currency": "RUB",
+      "country": "Russia",
+      "city": "Moscow",
+      "username": "ulbi tv",
       "avatar": "https://xakep.ru/wp-content/uploads/2018/05/171485/KuroiSH-hacker.jpg"
     }
   ]
