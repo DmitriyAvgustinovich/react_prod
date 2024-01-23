@@ -1,7 +1,8 @@
 import { useTranslation } from "react-i18next";
+import { Page } from "shared/ui/Page/Page";
 
 export const AboutPage = () => {
   const { t } = useTranslation();
 
-  return <div>{t("О нас")}</div>;
+  return <Page>{t("О нас")}</Page>;
 };

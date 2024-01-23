@@ -23,14 +23,6 @@ const getSkeletons = (view: ArticleView) => {
 export const ArticleList = React.memo((props: ArticleListProps) => {
   const { className, articles, view = ArticleView.SMALL, isLoading } = props;
 
-  if (isLoading) {
-    return (
-      <div className={classNames(cls.ArticleList, {}, [className, cls[view]])}>
-        {getSkeletons(view)}
-      </div>
-    );
-  }
-
   const renderArticle = (article: Article) => (
     <ArticleListItem
       article={article}
@@ -43,6 +35,7 @@ export const ArticleList = React.memo((props: ArticleListProps) => {
   return (
     <div className={classNames(cls.ArticleList, {}, [className, cls[view]])}>
       {articles.length > 0 && articles.map(renderArticle)}
+      {isLoading && getSkeletons(view)}
     </div>
   );
 });
