@@ -2,7 +2,7 @@ import { classNames } from "shared/lib/classNames/classNames";
 import React from "react";
 import { useTranslation } from "react-i18next";
 import { ArticleDetails, ArticleList } from "entities/Article";
-import { useNavigate, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import { CommentList } from "entities/Comment";
 import { Text, TextSize } from "shared/ui/Text/Text";
 import {
@@ -13,8 +13,6 @@ import { useSelector } from "react-redux";
 import { useInitialEffect } from "shared/lib/hooks/useInitialEffect/useInitialEffect";
 import { useAppDispatch } from "shared/lib/hooks/useAppDispatch/useAppDispatch";
 import { AddCommentForm } from "features/addCommentForm";
-import { Button, ButtonTheme } from "shared/ui/Button/Button";
-import { RouterPath } from "shared/config/routeConfig/routeConfig";
 import { Page } from "widgets/Page/Page";
 import { articleDetailsPageReducer } from "pages/ArticleDetailsPage/model/slices";
 import cls from "./ArticleDetailsPage.module.scss";
@@ -25,6 +23,7 @@ import { addCommentForArticle } from "../../model/services/addCommentForArticle/
 import { getArticleRecommendations } from "../../model/slices/articleDetailsPageRecommendationsSlice";
 import { getArticleRecommendationsIsLoading } from "../../model/selectors/recommendations";
 import { fetchArticleRecommendations } from "../../model/services/fetchArticleRecommendations/fetchArticleRecommendations";
+import { ArticleDetailsPageHeader } from "../ArticleDetailsPageHeader/ArticleDetailsPageHeader";
 
 interface ArticleDetailsPageProps {
   className?: string;
@@ -39,7 +38,6 @@ const ArticleDetailsPage = (props: ArticleDetailsPageProps) => {
 
   const { t } = useTranslation("article-details");
 
-  const navigate = useNavigate();
   const { id } = useParams<{ id: string }>();
 
   const dispatch = useAppDispatch();
@@ -62,10 +60,6 @@ const ArticleDetailsPage = (props: ArticleDetailsPageProps) => {
     dispatch(fetchArticleRecommendations());
   });
 
-  const onBackToList = React.useCallback(() => {
-    navigate(RouterPath.articles);
-  }, [navigate]);
-
   if (!id) {
     return (
       <div className={classNames(cls.ArticleDetailsPage, {}, [className])}>
@@ -77,10 +71,7 @@ const ArticleDetailsPage = (props: ArticleDetailsPageProps) => {
   return (
     <DynamicModuleLoader reducers={reducers} removeAfterUnmount>
       <Page className={classNames(cls.ArticleDetailsPage, {}, [className])}>
-        <Button theme={ButtonTheme.OUTLINE} onClick={onBackToList}>
-          {t("Назад к списку")}
-        </Button>
-
+        <ArticleDetailsPageHeader />
         <ArticleDetails id={id} />
 
         <Text
