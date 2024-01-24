@@ -12,6 +12,7 @@ interface ArticleListProps {
   articles: Article[];
   isLoading?: boolean;
   view?: ArticleView;
+  target?: React.HTMLAttributeAnchorTarget;
 }
 
 const getSkeletons = (view: ArticleView) => {
@@ -23,7 +24,13 @@ const getSkeletons = (view: ArticleView) => {
 };
 
 export const ArticleList = React.memo((props: ArticleListProps) => {
-  const { className, articles, view = ArticleView.SMALL, isLoading } = props;
+  const {
+    className,
+    articles,
+    view = ArticleView.SMALL,
+    isLoading,
+    target,
+  } = props;
 
   const { t } = useTranslation();
 
@@ -33,6 +40,7 @@ export const ArticleList = React.memo((props: ArticleListProps) => {
       view={view}
       className={cls.card}
       key={article.id}
+      target={target}
     />
   );
 
