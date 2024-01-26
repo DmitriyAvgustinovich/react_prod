@@ -12,7 +12,7 @@ import {
 } from "entities/Profile";
 import { useAppDispatch } from "shared/lib/hooks/useAppDispatch/useAppDispatch";
 import { getUserAuthData } from "entities/User";
-import cls from "./ProfilePageHeader.module.scss";
+import { HStack } from "shared/ui/Stack/HStack/HStack";
 
 interface ProfilePageHeaderProps {
   className?: string;
@@ -43,40 +43,28 @@ export const ProfilePageHeader = React.memo((props: ProfilePageHeaderProps) => {
   }, [dispatch]);
 
   return (
-    <div className={classNames(cls.ProfilePageHeader, {}, [className])}>
+    <HStack justify="between" max className={classNames("", {}, [className])}>
       <Text title={t("Профиль")} />
 
       {canEdit && (
-        <div className={cls.btnsWrapper}>
+        <>
           {readonly ? (
-            <Button
-              theme={ButtonTheme.OUTLINE}
-              className={cls.editBtn}
-              onClick={onEdit}
-            >
+            <Button theme={ButtonTheme.OUTLINE} onClick={onEdit}>
               {t("Редактировать")}
             </Button>
           ) : (
-            <>
-              <Button
-                theme={ButtonTheme.OUTLINE_RED}
-                className={cls.editBtn}
-                onClick={onCancelEdit}
-              >
+            <HStack gap="8">
+              <Button theme={ButtonTheme.OUTLINE_RED} onClick={onCancelEdit}>
                 {t("Отменить")}
               </Button>
 
-              <Button
-                theme={ButtonTheme.OUTLINE}
-                className={cls.saveBtn}
-                onClick={onSave}
-              >
+              <Button theme={ButtonTheme.OUTLINE} onClick={onSave}>
                 {t("Сохранить")}
               </Button>
-            </>
+            </HStack>
           )}
-        </div>
+        </>
       )}
-    </div>
+    </HStack>
   );
 });

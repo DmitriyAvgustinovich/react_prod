@@ -51,7 +51,19 @@ module.exports = {
     quotes: ["error", "double"],
     "i18next/no-literal-string": [
       "warn",
-      { markupOnly: true, ignoreAttribute: ["data-testid", "to"] },
+      {
+        markupOnly: true,
+        ignoreAttribute: [
+          "data-testid",
+          "to",
+          "justify",
+          "align",
+          "gap",
+          "direction",
+          "role",
+          "as",
+        ],
+      },
     ],
     "react/jsx-indent": [2, 2],
     indent: [2, 2],
