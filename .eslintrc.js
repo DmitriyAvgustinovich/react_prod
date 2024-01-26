@@ -13,7 +13,13 @@ module.exports = {
     ecmaVersion: "latest",
     sourceType: "module",
   },
-  plugins: ["react", "@typescript-eslint", "i18next", "react-hooks"],
+  plugins: [
+    "react",
+    "@typescript-eslint",
+    "i18next",
+    "react-hooks",
+    "react-prod-plugin",
+  ],
   rules: {
     "import/prefer-default-export": "off",
     "react/react-in-jsx-scope": "off",
@@ -39,6 +45,7 @@ module.exports = {
     "lines-between-class-members": "off",
     "implicit-arrow-linebreak": "off",
     "react/no-array-index-key": "off",
+    "react-prod-plugin/path-checker": "error",
     "no-undef": "off",
     "max-len": "off",
     quotes: ["error", "double"],
