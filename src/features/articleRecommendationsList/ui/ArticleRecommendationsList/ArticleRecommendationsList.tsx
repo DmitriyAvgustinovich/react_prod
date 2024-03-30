@@ -22,13 +22,13 @@ export const ArticleRecommendationsList = memo(
       error,
     } = useArticleRecommendationsList(3);
 
-    if (isLoading || error) return null;
+    if (isLoading || error || !articles) return null;
 
     return (
       <VStack gap="8" className={classNames("", {}, [className])}>
         <Text text={t("Рекомендуем")} size={TextSize.L} />
 
-        <ArticleList articles={articles} target="_blank" />
+        <ArticleList articles={articles} target="_blank" virtualized={false} />
       </VStack>
     );
   }

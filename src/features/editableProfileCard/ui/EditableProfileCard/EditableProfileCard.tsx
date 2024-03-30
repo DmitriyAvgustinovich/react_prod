@@ -20,13 +20,12 @@ import { ValidateProfileErrors } from "../../model/types/editableProfileCardSche
 import { fetchProfileData } from "../../model/services/fetchProfileData/fetchProfileData";
 import { profileActions, profileReducer } from "../../model/slice/profileSlice";
 import { getProfileIsLoading } from "../../model/selectors/getProfileIsLoading/getProfileIsLoading";
-import cls from "./EditableProfileCard.module.scss";
 import { getProfileForm } from "../../model/selectors/getProfileForm/getProfileForm";
 import { EditableProfilePageHeader } from "../EditableProfileCardHeader/EditableProfileCardHeader";
 
 interface EditableProfileCardProps {
   className?: string;
-  id?: string;
+  id: string;
 }
 
 export const EditableProfileCard = memo((props: EditableProfileCardProps) => {
@@ -116,11 +115,7 @@ export const EditableProfileCard = memo((props: EditableProfileCardProps) => {
 
   return (
     <DynamicModuleLoader reducers={reducers}>
-      <VStack
-        max
-        gap="16"
-        className={classNames(cls.EditableProfileCard, {}, [className])}
-      >
+      <VStack max gap="16" className={classNames("", {}, [className])}>
         <EditableProfilePageHeader />
 
         {validateErrors?.length &&
@@ -129,6 +124,7 @@ export const EditableProfileCard = memo((props: EditableProfileCardProps) => {
               key={error}
               theme={TextTheme.ERROR}
               text={validateErrorTranslates[error]}
+              data-testid="EditableProfileCard.Error"
             />
           ))}
 

@@ -4,7 +4,12 @@ import { useTranslation } from "react-i18next";
 import { Button, ButtonTheme } from "shared/ui/Button/Button";
 import { LoginModal } from "features/AuthByUserName";
 import { useDispatch, useSelector } from "react-redux";
-import { getUserAuthData, userActions } from "entities/User";
+import {
+  getUserAuthData,
+  isUserAdmin,
+  isUserManager,
+  userActions,
+} from "entities/User";
 import { Text, TextTheme } from "shared/ui/Text/Text";
 import { AppLink, AppLinkTheme } from "shared/ui/AppLink/AppLink";
 import { RouterPath } from "shared/config/routeConfig/routeConfig";
@@ -19,11 +24,14 @@ interface NavbarProps {
 export const Navbar = React.memo((props: NavbarProps) => {
   const { className } = props;
 
+  const { t } = useTranslation();
+
   const dispatch = useDispatch();
   const authData = useSelector(getUserAuthData);
 
   const [isAuthModal, setIsAuthModal] = React.useState(false);
-  const { t } = useTranslation();
+  const isAdmin = useSelector(isUserAdmin);
+  const isManager = useSelector(isUserManager);
 
   const onShowModal = React.useCallback(() => {
     setIsAuthModal(true);
@@ -36,6 +44,8 @@ export const Navbar = React.memo((props: NavbarProps) => {
   const onLogout = React.useCallback(() => {
     dispatch(userActions.logout());
   }, [dispatch]);
+
+  const isAdminPanelAvailable = isAdmin || isManager;
 
   if (authData) {
     return (
@@ -55,6 +65,14 @@ export const Navbar = React.memo((props: NavbarProps) => {
           trigger={<Avatar size={30} src={authData.avatar} />}
           direction="bottom left"
           items={[
+            ...(isAdminPanelAvailable
+              ? [
+                {
+                  content: t("Админка"),
+                  href: RouterPath.admin_panel,
+                },
+              ]
+              : []),
             {
               content: t("Профиль"),
               href: RouterPath.profile + authData.id,
