@@ -9,14 +9,13 @@ import { Button, ButtonTheme } from "shared/ui/Button/Button";
 import { useTranslation } from "react-i18next";
 import { AppLink } from "shared/ui/AppLink/AppLink";
 import { RouterPath } from "shared/config/routeConfig/routeConfig";
-import {
-  Article,
-  ArticleBlockType,
-  ArticleTextBlock,
-  ArticleView,
-} from "../../model/types/article";
 import { ArticleTextBlockComponent } from "../ArticleTextBlockComponent/ArticleTextBlockComponent";
 import cls from "./ArticleListItem.module.scss";
+import {
+  ArticleBlockType,
+  ArticleView,
+} from "../../model/consts/articleConsts";
+import { Article, ArticleTextBlock } from "../../model/types/article";
 
 interface ArticleListItemProps {
   className?: string;

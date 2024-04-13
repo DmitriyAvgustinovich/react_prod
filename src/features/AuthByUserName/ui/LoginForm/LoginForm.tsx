@@ -27,7 +27,7 @@ const initialReducers: ReducersList = {
   loginForm: loginReducer,
 };
 
-const LoginForm = React.memo((props: LoginFormProps) => {
+export const LoginForm = React.memo((props: LoginFormProps) => {
   const { className, onSuccess } = props;
 
   const { t } = useTranslation();
@@ -100,5 +100,3 @@ const LoginForm = React.memo((props: LoginFormProps) => {
     </DynamicModuleLoader>
   );
 });
-
-export default LoginForm;

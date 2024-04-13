@@ -9,13 +9,13 @@ import { AxiosInstance } from "axios";
 import { CounterSchema } from "entities/Counter";
 import { ArticleDetailsSchema } from "entities/Article";
 import { UserSchema } from "entities/User";
-import { LoginSchema } from "features/AuthByUserName";
 import { ArticleDetailsPageSchema } from "pages/ArticleDetailsPage";
 import { AddCommentFormSchema } from "features/addCommentForm";
 import { ArticlesPageSchema } from "pages/ArticlesPage";
 import { UISchema } from "features/UI";
 import { rtkApi } from "shared/api/rtkApi";
 import { ProfileSchema } from "features/editableProfileCard";
+import { LoginSchema } from "features/authByUserName";
 
 export interface StateSchema {
   counter: CounterSchema;

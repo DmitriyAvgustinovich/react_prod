@@ -1,6 +1,6 @@
 import { StateSchema } from "app/providers/StoreProvider";
 import { getProfileValidateErrors } from "./getProfileValidateErrors";
-import { ValidateProfileErrors } from "../../types/editableProfileCardSchema";
+import { ValidateProfileErrors } from "../../consts/consts";
 
 describe("getProfileValidateErrors.test", () => {
   test("should work with normal case", () => {

@@ -35,6 +35,8 @@
     "@storybook/addon-interactions": "^6.4.19",
     "@storybook/addon-links": "^6.4.19",
     "@storybook/builder-webpack5": "^6.4.19",
+    "@types/circular-dependency-plugin": "^5.0.5",
+    "circular-dependency-plugin": "^5.2.2",
     "@storybook/manager-webpack5": "^6.4.19",
     "@storybook/react": "^6.4.19",
     "@storybook/testing-library": "^0.0.9",

@@ -2,7 +2,6 @@ import { classNames } from "shared/lib/classNames/classNames";
 import React from "react";
 import { useTranslation } from "react-i18next";
 import { Button, ButtonTheme } from "shared/ui/Button/Button";
-import { LoginModal } from "features/AuthByUserName";
 import { useDispatch, useSelector } from "react-redux";
 import {
   getUserAuthData,
@@ -15,6 +14,7 @@ import { AppLink, AppLinkTheme } from "shared/ui/AppLink/AppLink";
 import { RouterPath } from "shared/config/routeConfig/routeConfig";
 import { Dropdown } from "shared/ui/Dropdown/Dropdown";
 import { Avatar } from "shared/ui/Avatar/Avatar";
+import { LoginModal } from "features/authByUserName";
 import cls from "./Navbar.module.scss";
 
 interface NavbarProps {
