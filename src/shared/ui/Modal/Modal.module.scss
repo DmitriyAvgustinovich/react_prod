@@ -8,6 +8,9 @@
   pointer-events: none;
   z-index: -1;
   color: var(--primary-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .overlay {
@@ -30,7 +33,7 @@
 
 .opened {
   pointer-events: auto;
-  opacity: 1;
+  opacity: 100;
   z-index: var(--modal-z-index);
 
   .content {
