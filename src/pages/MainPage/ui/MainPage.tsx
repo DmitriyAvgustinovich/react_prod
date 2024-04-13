@@ -1,6 +1,6 @@
 import { BugButton } from "app/providers/ErrorBoundary";
 import { useTranslation } from "react-i18next";
-import { ListBox } from "shared/ui/ListBox/ListBox";
+import { ListBox } from "shared/ui/Popups";
 import { Page } from "widgets/Page/Page";
 
 export const MainPage = () => {

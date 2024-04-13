@@ -58,6 +58,7 @@ module.exports = {
           "to",
           "justify",
           "align",
+          "border",
           "gap",
           "direction",
           "role",
